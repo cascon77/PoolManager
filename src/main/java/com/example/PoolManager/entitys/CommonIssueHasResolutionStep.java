@@ -13,8 +13,8 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @NoArgsConstructor
-@Table(name = "commun_issue_has_resolution_step")
-public class CommunIssueHasResolutionStep {
+@Table(name = "common_issue_has_resolution_step")
+public class CommonIssueHasResolutionStep {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;

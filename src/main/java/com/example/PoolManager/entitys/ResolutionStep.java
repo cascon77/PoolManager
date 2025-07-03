@@ -23,5 +23,5 @@ public class ResolutionStep {
 	private String description;
 	
 	@OneToMany(mappedBy = "resolutionStep")
-	private List<CommunIssueHasResolutionStep> issues;
+	private List<CommonIssueHasResolutionStep> issues;
 }

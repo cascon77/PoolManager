@@ -25,5 +25,5 @@ public class CommonIssue {
 	private String description;
 
 	@OneToMany(mappedBy = "commonIssue", cascade = CascadeType.ALL, orphanRemoval = true)
-	private List<CommunIssueHasResolutionStep> steps;
+	private List<CommonIssueHasResolutionStep> steps;
 }
