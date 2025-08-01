@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @Table(name = "water_parameters")
-public class WaterParams {
+public class WaterParamsEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,5 +30,5 @@ public class WaterParams {
 	
 	@ManyToOne
 	@JoinColumn(name = "pool_id", nullable = false)
-	private Pool pool;
+	private PoolEntity pool;
 }

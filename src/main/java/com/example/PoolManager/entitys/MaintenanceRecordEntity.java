@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @Table(name = "maintenance_records")
-public class MaintenanceRecord {
+public class MaintenanceRecordEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -34,14 +34,14 @@ public class MaintenanceRecord {
 	private MaintenanceStatus status;
 
 	@ManyToOne
-	@JoinTable(name = "pool_id")
-	private Pool pool;
+	@JoinTable(name = "MaintenanceRecord_pool")
+	private PoolEntity pool;
 
 	@ManyToOne
-	@JoinTable(name = "user_id")
-	private User user;
+	@JoinTable(name = "MaintenanceRecord_user")
+	private UserEntity user;
 
 	@ManyToOne
 	@JoinColumn(name = "common_issue_id")
-	private CommonIssue commonIssue;
+	private CommonIssueEntity commonIssue;
 }

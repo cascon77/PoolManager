@@ -3,10 +3,10 @@ package com.example.PoolManager.repo;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.example.PoolManager.entitys.WaterParams;
+import com.example.PoolManager.entitys.WaterParamsEntity;
 
 @Repository
-public interface WaterParamsRepository extends JpaRepository<WaterParams, Long> {
+public interface WaterParamsRepository extends JpaRepository<WaterParamsEntity, Long> {
 
 
 }

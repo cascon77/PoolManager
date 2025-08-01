@@ -1,6 +1,8 @@
 package com.example.PoolManager.entitys;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -11,10 +13,17 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @NoArgsConstructor
-@Table(name = "expense_category")
-public class ExpenseCategory {
+@Table(name = "pools")
+public class PoolEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
+	private String location;
+
+	@Enumerated(EnumType.STRING)
+	private PoolType poolType;
+
+	private int liters;
+
 }

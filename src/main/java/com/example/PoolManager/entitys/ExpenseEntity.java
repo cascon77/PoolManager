@@ -1,9 +1,13 @@
 package com.example.PoolManager.entitys;
 
+import java.time.LocalDate;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,13 +15,19 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @NoArgsConstructor
-@Table(name = "products")
-public class Product {
+@Table(name = "expenses")
+public class ExpenseEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String name;
-	private String description;
-	private String unitOfMeasure;
-	private int minimumStock;
+	private LocalDate date;
+	private String concept;
+	private Double amount;
+	@ManyToOne
+	@JoinColumn(name = "category_id")
+	private ExpenseCategoryEntity category;
+	@ManyToOne
+	@JoinColumn(name = "pool_id")
+	private PoolEntity pool;
+
 }

@@ -3,10 +3,10 @@ package com.example.PoolManager.repo;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.example.PoolManager.entitys.ServiceType;
+import com.example.PoolManager.entitys.ServiceTypeEntity;
 
 @Repository
-public interface ServiceTypeRepository extends JpaRepository<ServiceType, Long> {
+public interface ServiceTypeRepository extends JpaRepository<ServiceTypeEntity, Long> {
 
 	
 }

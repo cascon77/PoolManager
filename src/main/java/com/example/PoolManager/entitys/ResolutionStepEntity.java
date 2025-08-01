@@ -2,7 +2,6 @@ package com.example.PoolManager.entitys;
 
 import java.util.List;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,15 +14,14 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @NoArgsConstructor
-@Table(name = "common issues")
-public class CommonIssue {
-
+@Table(name = "resolution_steps")
+public class ResolutionStepEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String name;
+	private String title;
 	private String description;
-
-	@OneToMany(mappedBy = "commonIssue", cascade = CascadeType.ALL, orphanRemoval = true)
-	private List<CommonIssueHasResolutionStep> steps;
+	
+	@OneToMany(mappedBy = "resolutionStep")
+	private List<CommonIssueHasResolutionStepEntity> issues;
 }

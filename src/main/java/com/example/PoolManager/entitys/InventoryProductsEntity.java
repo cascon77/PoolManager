@@ -1,5 +1,7 @@
 package com.example.PoolManager.entitys;
 
+import java.time.LocalDate;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,19 +15,23 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @NoArgsConstructor
-@Table(name = "common_issue_has_resolution_step")
-public class CommonIssueHasResolutionStep {
+@Table(name = "inventory_products")
+public class InventoryProductsEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	@ManyToOne
-	@JoinColumn(name = "common_issue_id")
-	private CommonIssue commonIssue;
+	@JoinColumn(name = "product_id")
+	private ProductEntity product;
+	
+	private int quantity;
+	private LocalDate DateBought;
+	private LocalDate fechaVencimiento;
 	
 	@ManyToOne
-	@JoinColumn(name = "resolution_step_id")
-	private ResolutionStep resolutionStep;
+	@JoinColumn(name = "pool_id")
+	private PoolEntity pool;
 	
-	private int stepOrder;
+	private String note;
 }
